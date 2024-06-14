@@ -78,7 +78,7 @@ def detect_green_bubbles_and_bombs(image):
     for contour in contours:
         
         area = cv2.contourArea(contour)
-        if 50 < area < 2400:  
+        if 100 < area < 1500:  
             
             M = cv2.moments(contour)
             if M["m00"] != 0:
@@ -153,8 +153,8 @@ if __name__ == "__main__":
     try:
         while True:
             if running:
-                if time.time() - start_time > 35:  
-                    print("35 seconds have passed. Stopping the script.")
+                if time.time() - start_time > 40:  
+                    print("40 seconds have passed. Stopping the script.")
                     raise StopException
 
                 try:

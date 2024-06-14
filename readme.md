@@ -20,7 +20,7 @@ This script is designed to automate the process of detecting and clicking on gre
 
 ## Usage
 
-Run the script and use the hotkeys to control its execution. The script will automatically detect and click on green bubbles in the active game window. The script will stop if it has been running for more than 35 seconds, if the PyAutoGUI failsafe is triggered, or if the 'q' hotkey is pressed.
+Run the script and use the hotkeys to control its execution. The script will automatically detect and click on green bubbles in the active game window. The script will stop if it has been running for more than 40 seconds, if the PyAutoGUI failsafe is triggered, or if the 'q' hotkey is pressed.
 
 ## Accuracy
 
