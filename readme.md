@@ -4,12 +4,12 @@ This script is designed to automate the process of detecting and clicking on gre
 
 ## Dependencies
 
-- OpenCV
-- NumPy
-- PyAutoGUI
+- OpenCV pip install opencv-python
+- NumPy pip install numpy
+- PyAutoGUI pip install pyautogui
 - Time
-- Keyboard
-- PyGetWindow
+- Keyboard pip install keyboard
+- PyGetWindow pip install PyGetWindow
 - Threading
 
 ## Hotkeys
