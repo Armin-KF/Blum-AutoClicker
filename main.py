@@ -78,7 +78,7 @@ def detect_green_bubbles_and_bombs(image):
     for contour in contours:
         
         area = cv2.contourArea(contour)
-        if 100 < area < 1500:  
+        if 80 < area < 1750:  
             
             M = cv2.moments(contour)
             if M["m00"] != 0:
@@ -96,7 +96,7 @@ def detect_green_bubbles_and_bombs(image):
     for contour in contours:
         
         area = cv2.contourArea(contour)
-        if 50 < area < 2000:  
+        if 80 < area < 1750:  
            
             M = cv2.moments(contour)
             if M["m00"] != 0:
@@ -153,30 +153,23 @@ if __name__ == "__main__":
     try:
         while True:
             if running:
-                if time.time() - start_time > 40:  
-                    print("40 seconds have passed. Stopping the script.")
+                if time.time() - start_time > 100:  
+                    print("100 seconds have passed. Stopping the script.")
                     raise StopException
 
                 try:
-                   
                     active_window = get_active_window()
                     if active_window is None:
                         continue
                     
                     window_x, window_y, window_width, window_height = active_window.left, active_window.top, active_window.width, active_window.height
 
-                   
                     screen = capture_game_window_by_properties(window_x, window_y, window_width, window_height)
 
-                   
                     green_bubbles, bombs = detect_green_bubbles_and_bombs(screen)
                     threading.Thread(target=click_on_green_bubbles, args=(green_bubbles, bombs, window_x, window_y)).start()
 
-                    
                     print(f"Iteration time: {time.time() - start_time:.4f} seconds")
-
-                    
-                    time.sleep(0.01)  
 
                 except pyautogui.FailSafeException:
                     print("FailSafe triggered. Stopping the script.")
